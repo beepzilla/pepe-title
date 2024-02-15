@@ -96,6 +96,8 @@ h2 span.capital {
     transform: translateX(-50%) translateY(-20px);
 }
 
+/* Other styles remain unchanged */
+
 .button-container {
     position: absolute;
     top: 62%;
@@ -105,7 +107,7 @@ h2 span.capital {
 
 .button {
     opacity: 0;
-    transition: opacity var(--duration) var(--easing), transform var(--duration) var(--easing);
+    transition: opacity var(--duration) var(--easing);
     background-color: var(--text);
     color: var(--bg);
     border: none;
@@ -117,18 +119,14 @@ h2 span.capital {
 
 .button.animate-in {
     opacity: 1;
-    transform: translateX(-50%) translateY(-20px);
-}
-
-.button:hover {
-    transform: translateY(-2px);
+    transform: translateY(-20px);
 }
 
 .options {
     display: none;
     position: absolute;
-    width: 200px;
-    height: 200px;
+    width: 250px; /* Increased width for a larger orbit */
+    height: 250px; /* Increased height for a larger orbit */
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -143,8 +141,8 @@ h2 span.capital {
 
 .option {
     position: absolute;
-    width: 50px;
-    height: 50px;
+    width: 60px; /* Increased size of the orbiting buttons */
+    height: 60px; /* Increased size of the orbiting buttons */
     background-color: var(--text);
     border-radius: 50%;
     display: flex;
@@ -153,20 +151,23 @@ h2 span.capital {
     transition: transform 0.3s;
     text-decoration: none;
     color: var(--bg);
-    font-size: 1vw;
+    font-size: 1.2vw; /* Adjusted font size for larger buttons */
 }
 
 .option:hover {
     transform: scale(1.2);
 }
 
-.option:nth-child(1) { transform: translate(-50%, -150%); }
-.option:nth-child(2) { transform: translate(50%, -150%); }
-.option:nth-child(3) { transform: translate(150%, -50%); }
-.option:nth-child(4) { transform: translate(150%, 50%); }
-.option:nth-child(5) { transform: translate(50%, 150%); }
-.option:nth-child(6) { transform: translate(-50%, 150%); }
-.option:nth-child(7) { transform: translate(-150%, 50%); }
+.option:nth-child(1) { transform: translate(-50%, -175%); }
+.option:nth-child(2) { transform: translate(50%, -175%); }
+.option:nth-child(3) { transform: translate(175%, -50%); }
+.option:nth-child(4) { transform: translate(175%, 50%); }
+.option:nth-child(5) { transform: translate(50%, 175%); }
+.option:nth-child(6) { transform: translate(-50%, 175%); }
+.option:nth-child(7) { transform: translate(-175%, 50%); }
+
+/* Media query adjustments remain unchanged */
+
 
 @media (max-width: 600px) {
     h1 {
