@@ -110,11 +110,16 @@ h2 span.capital {
     transition: opacity var(--duration) var(--easing);
     background-color: var(--text);
     color: var(--bg);
-    border: none;
+    border: 2px solid black; /* Added black border */
     padding: 10px 20px;
     font-family: 'Luckiest Guy', cursive;
     font-size: 3vw;
     cursor: pointer;
+    width: 100px; /* Fixed width for square shape */
+    height: 100px; /* Fixed height for square shape */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .button.animate-in {
@@ -141,17 +146,18 @@ h2 span.capital {
 
 .option {
     position: absolute;
-    width: 60px; /* Increased size of the orbiting buttons */
-    height: 60px; /* Increased size of the orbiting buttons */
+    width: 60px;
+    height: 60px;
     background-color: var(--text);
     border-radius: 50%;
+    border: 2px solid black; /* Added black border */
     display: flex;
     justify-content: center;
     align-items: center;
     transition: transform 0.3s;
     text-decoration: none;
     color: var(--bg);
-    font-size: 1.2vw; /* Adjusted font size for larger buttons */
+    font-size: 1.2vw;
 }
 
 .option:hover {
@@ -165,7 +171,7 @@ h2 span.capital {
 .option:nth-child(5) { transform: translate(50%, 175%); }
 .option:nth-child(6) { transform: translate(-50%, 175%); }
 .option:nth-child(7) { transform: translate(-175%, 50%); }
-
+.option:nth-child(8) { transform: translate(-200%, -50%); }
 /* Media query adjustments remain unchanged */
 
 
