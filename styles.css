@@ -100,7 +100,7 @@ h2 span.capital {
 
 .button-container {
     position: absolute;
-    top: 62%;
+    top: 62.5%;
     left: 50%;
     transform: translateX(-50%);
 }
