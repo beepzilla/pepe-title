@@ -4,6 +4,7 @@
     --bg: #6FBFD9;
     --duration: 550ms;
     --easing: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    --neon-green: #39ff14;
 }
 
 html, body {
@@ -18,9 +19,9 @@ html, body {
 
 .content {
     position: relative;
-    top: 50%;
+    top: 45%; /* Moved up by 5% */
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -45%);
     text-align: center;
 }
 
@@ -63,10 +64,7 @@ h1 span.capital {
 }
 
 h2 {
-    position: absolute;
-    top: 70%;
-    left: 50%;
-    transform: translateX(-50%);
+    margin-top: 2vw; /* Added margin to move h2 under h1 */
     font-size: 5vw; /* Adjust font size based on viewport width */
     -webkit-text-stroke-width: 0.15vw;
 }
@@ -79,6 +77,25 @@ h2 span.animate-in {
 h2 span.capital {
     margin-left: 1vw;
     font-size: 6vw;
+}
+
+.enter-button {
+    display: block;
+    margin-top: 2vw; /* Added margin to move button under h2 */
+    background-color: #28a745; /* Different shade of green */
+    color: var(--neon-green); /* Neon green text */
+    border: none;
+    border-radius: 5px;
+    padding: 1vw 2vw;
+    font-size: 5vw; /* Adjust font size based on viewport width */
+    font-family: 'Luckiest Guy', cursive;
+    cursor: pointer;
+    outline: none;
+    transition: background-color 0.3s;
+}
+
+.enter-button:hover {
+    background-color: #218838; /* Darker shade of green on hover */
 }
 
 @media (max-width: 600px) {
@@ -100,11 +117,14 @@ h2 span.capital {
     }
 
     h2 {
-        top: 120%;
         font-size: 7.5vw; /* Increase font size for smaller screens */
     }
 
     h2 span.capital {
         font-size: 9vw;
+    }
+
+    .enter-button {
+        font-size: 7.5vw; /* Increase font size for smaller screens */
     }
 }
