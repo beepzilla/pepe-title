@@ -132,7 +132,7 @@ h2 span.capital {
     position: absolute;
     width: 250px; /* Increased width for a larger orbit */
     height: 250px; /* Increased height for a larger orbit */
-    top: 50%;
+    top: 55%;
     left: 50%;
     transform: translate(-50%, -50%);
     border-radius: 50%;
