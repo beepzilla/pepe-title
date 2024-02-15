@@ -18,7 +18,7 @@ html, body {
 
 .content {
     position: relative;
-    top: 50%;
+    top: 10%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
@@ -64,7 +64,7 @@ h1 span.capital {
 
 h2 {
     position: absolute;
-    top: 70%;
+    top: 20%;
     left: 50%;
     transform: translateX(-50%);
     font-size: 5vw; /* Adjust font size based on viewport width */
