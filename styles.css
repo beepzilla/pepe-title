@@ -115,8 +115,8 @@ h2 span.capital {
     font-family: 'Luckiest Guy', cursive;
     font-size: 3vw;
     cursor: pointer;
-    width: 100px; /* Fixed width for square shape */
-    height: 100px; /* Fixed height for square shape */
+    width: 150px; /* Fixed width for square shape */
+    height: 150px; /* Fixed height for square shape */
     display: flex;
     justify-content: center;
     align-items: center;
