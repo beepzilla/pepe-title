@@ -98,41 +98,46 @@ h2 span.capital {
 
 /* Other styles remain unchanged */
 
+/* Adjusted properties for button-container and options for centering */
 .button-container {
     position: absolute;
-    top: 62.5%; /* Adjust as needed */
-    left: 50%; /* Center */
+    top: 62.5%; /* Adjust this value as needed */
+    left: 50%;
     transform: translate(-50%, -50%);
-    display: inline-block;
+    display: inline-flex; /* Use flex to center children */
+    justify-content: center;
+    align-items: center;
+    width: 150px; /* Width of the square button */
+    height: 150px; /* Height of the square button */
 }
 
 .button {
-    opacity: 1; /* Make button visible immediately for simplicity */
+    opacity: 1;
     background-color: var(--text);
     color: var(--bg);
-    border: 2px solid black; /* Black border for button */
-    width: 150px; /* Square shape */
-    height: 150px; /* Square shape */
+    border: 2px solid black;
+    width: 100%; /* Make button fill container */
+    height: 100%; /* Make button fill container */
     font-size: 2vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    position: relative; /* Ensure stacking context for options */
+    z-index: 2; /* Above options */
 }
 
 .options {
-    display: none; /* Initially hidden */
+    display: none; /* Hidden initially */
     position: absolute;
+    width: 100%; /* Match the button for overlay */
+    height: 100%; /* Match the button for overlay */
     top: 0;
     left: 0;
-    width: 150px; /* Match the button size for proper overlay */
-    height: 150px;
+    transform: translate(0, 0); /* Reset transform */
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    pointer-events: none; /* Ignore mouse events */
+    z-index: 1; /* Below the button */
 }
 
-.button-container:hover .options,
-.options:hover {
+.button-container:hover .options {
     display: flex; /* Show options on hover */
 }
 
@@ -140,21 +145,19 @@ h2 span.capital {
     position: absolute;
     width: 60px; /* Option button size */
     height: 60px;
-    background-color: var(--text);
+    border: 2px solid black;
     border-radius: 50%;
-    border: 2px solid black; /* Black border for option buttons */
     display: flex;
     justify-content: center;
     align-items: center;
-    text-decoration: none;
     color: var(--bg);
     font-size: 1.2vw;
-    pointer-events: auto; /* Enable mouse events */
+    transition: transform 0.3s;
 }
 
-/* Correctly position the 8 options around the button */
+/* Dynamically position each option around the button */
 .option {
-    transform: translate(-50%, -50%) rotate(var(--angle)) translate(0, -80px) rotate(calc(-1 * var(--angle)));
+    transform: translate(-50%, -50%) rotate(var(--angle)) translate(75px) rotate(calc(-1 * var(--angle)));
 }
 
 .option:nth-child(1) { --angle: 0deg; }
@@ -165,6 +168,7 @@ h2 span.capital {
 .option:nth-child(6) { --angle: 225deg; }
 .option:nth-child(7) { --angle: 270deg; }
 .option:nth-child(8) { --angle: 315deg; }
+
 
 
 @media (max-width: 600px) {
