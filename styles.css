@@ -130,8 +130,8 @@ h2 span.capital {
 .options {
     display: none;
     position: absolute;
-    width: 300px; /* Increased width for a larger orbit */
-    height: 300px; /* Increased height for a larger orbit */
+    width: 200px; /* Increased width for a larger orbit */
+    height: 200px; /* Increased height for a larger orbit */
     top: 55%;
     left: 50%;
     transform: translate(-50%, -50%);
