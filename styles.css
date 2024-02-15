@@ -64,7 +64,7 @@ h1 span.capital {
 
 h2 {
     position: absolute;
-    top: 20%;
+    top: 80%;
     left: 50%;
     transform: translateX(-50%);
     font-size: 5vw; /* Adjust font size based on viewport width */
