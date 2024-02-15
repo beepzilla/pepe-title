@@ -1,3 +1,4 @@
+
 :root {
     --stroke: #0A1C20;
     --text: #FEDC0C;
@@ -98,77 +99,81 @@ h2 span.capital {
 
 /* Other styles remain unchanged */
 
-/* Adjusted properties for button-container and options for centering */
 .button-container {
     position: absolute;
-    top: 62.5%; /* Adjust this value as needed */
+    top: 62.5%;
     left: 50%;
-    transform: translate(-50%, -50%);
-    display: inline-flex; /* Use flex to center children */
-    justify-content: center;
-    align-items: center;
-    width: 150px; /* Width of the square button */
-    height: 150px; /* Height of the square button */
+    transform: translateX(-50%);
 }
 
 .button {
-    opacity: 1;
+    opacity: 0;
+    transition: opacity var(--duration) var(--easing);
     background-color: var(--text);
     color: var(--bg);
-    border: 2px solid black;
-    width: 100%; /* Make button fill container */
-    height: 100%; /* Make button fill container */
-    font-size: 2vw;
-    position: relative; /* Ensure stacking context for options */
-    z-index: 2; /* Above options */
-}
-
-.options {
-    display: none; /* Hidden initially */
-    position: absolute;
-    width: 100%; /* Match the button for overlay */
-    height: 100%; /* Match the button for overlay */
-    top: 0;
-    left: 0;
-    transform: translate(0, 0); /* Reset transform */
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    z-index: 1; /* Below the button */
-}
-
-.button-container:hover .options {
-    display: flex; /* Show options on hover */
-}
-
-.option {
-    position: absolute;
-    width: 60px; /* Option button size */
-    height: 60px;
-    border: 2px solid black;
-    border-radius: 50%;
+    border: 2px solid black; /* Added black border */
+    padding: 10px 20px;
+    font-family: 'Luckiest Guy', cursive;
+    font-size: 3vw;
+    cursor: pointer;
+    width: 150px; /* Fixed width for square shape */
+    height: 150px; /* Fixed height for square shape */
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.button.animate-in {
+    opacity: 1;
+    transform: translateY(-20px);
+}
+
+.options {
+    display: none;
+    position: absolute;
+    width: 200px; /* Increased width for a larger orbit */
+    height: 200px; /* Increased height for a larger orbit */
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+}
+
+.button-container:hover .options {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.option {
+    position: absolute;
+    width: 90px;
+    height: 90px;
+    background-color: var(--text);
+    border-radius: 50%;
+    border: 5px solid black; /* Added black border */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s;
+    text-decoration: none;
     color: var(--bg);
     font-size: 1.2vw;
-    transition: transform 0.3s;
 }
 
-/* Dynamically position each option around the button */
-.option {
-    transform: translate(-50%, -50%) rotate(var(--angle)) translate(75px) rotate(calc(-1 * var(--angle)));
+.option:hover {
+    transform: scale(1.2);
 }
 
-.option:nth-child(1) { --angle: 0deg; }
-.option:nth-child(2) { --angle: 45deg; }
-.option:nth-child(3) { --angle: 90deg; }
-.option:nth-child(4) { --angle: 135deg; }
-.option:nth-child(5) { --angle: 180deg; }
-.option:nth-child(6) { --angle: 225deg; }
-.option:nth-child(7) { --angle: 270deg; }
-.option:nth-child(8) { --angle: 315deg; }
-
+.option:nth-child(1) { transform: translate(-50%, -175%); }
+.option:nth-child(2) { transform: translate(50%, -175%); }
+.option:nth-child(3) { transform: translate(175%, -50%); }
+.option:nth-child(4) { transform: translate(175%, 50%); }
+.option:nth-child(5) { transform: translate(50%, 175%); }
+.option:nth-child(6) { transform: translate(-50%, 175%); }
+.option:nth-child(7) { transform: translate(-175%, 50%); }
+.option:nth-child(8) { transform: translate(-175%, -50%); }
+/* Media query adjustments remain unchanged */
 
 
 @media (max-width: 600px) {
