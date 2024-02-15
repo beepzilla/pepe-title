@@ -83,7 +83,7 @@ h2 span.capital {
 
 .image {
     position: absolute;
-    top: 70%;
+    top: 60%;
     left: 50%;
     transform: translateX(-50%);
     width: 20vw; /* Adjust image size based on viewport width */
@@ -98,7 +98,7 @@ h2 span.capital {
 
 .button {
     position: absolute;
-    top: 85%;
+    top: 62%;
     left: 50%;
     transform: translateX(-50%);
     opacity: 0;
