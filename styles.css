@@ -100,79 +100,71 @@ h2 span.capital {
 
 .button-container {
     position: absolute;
-    top: 62.5%;
-    left: 50%;
-    transform: translateX(-50%);
+    top: 62.5%; /* Adjust as needed */
+    left: 50%; /* Center */
+    transform: translate(-50%, -50%);
+    display: inline-block;
 }
 
 .button {
-    opacity: 0;
-    transition: opacity var(--duration) var(--easing);
+    opacity: 1; /* Make button visible immediately for simplicity */
     background-color: var(--text);
     color: var(--bg);
-    border: 2px solid black; /* Added black border */
-    padding: 10px 20px;
-    font-family: 'Luckiest Guy', cursive;
-    font-size: 3vw;
-    cursor: pointer;
-    width: 150px; /* Fixed width for square shape */
-    height: 150px; /* Fixed height for square shape */
+    border: 2px solid black; /* Black border for button */
+    width: 150px; /* Square shape */
+    height: 150px; /* Square shape */
+    font-size: 2vw;
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.button.animate-in {
-    opacity: 1;
-    transform: translateY(-20px);
 }
 
 .options {
-    display: none;
+    display: none; /* Initially hidden */
     position: absolute;
-    width: 200px; /* Increased width for a larger orbit */
-    height: 200px; /* Increased height for a larger orbit */
-    top: 55%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    border-radius: 50%;
-}
-
-.button-container:hover .options {
-    display: flex;
+    top: 0;
+    left: 0;
+    width: 150px; /* Match the button size for proper overlay */
+    height: 150px;
     justify-content: center;
     align-items: center;
+    pointer-events: none; /* Ignore mouse events */
+}
+
+.button-container:hover .options,
+.options:hover {
+    display: flex; /* Show options on hover */
 }
 
 .option {
     position: absolute;
-    width: 90px;
-    height: 90px;
+    width: 60px; /* Option button size */
+    height: 60px;
     background-color: var(--text);
     border-radius: 50%;
-    border: 5px solid black; /* Added black border */
+    border: 2px solid black; /* Black border for option buttons */
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: transform 0.3s;
     text-decoration: none;
     color: var(--bg);
     font-size: 1.2vw;
+    pointer-events: auto; /* Enable mouse events */
 }
 
-.option:hover {
-    transform: scale(1.2);
+/* Correctly position the 8 options around the button */
+.option {
+    transform: translate(-50%, -50%) rotate(var(--angle)) translate(0, -80px) rotate(calc(-1 * var(--angle)));
 }
 
-.option:nth-child(1) { transform: translate(-50%, -175%); }
-.option:nth-child(2) { transform: translate(50%, -175%); }
-.option:nth-child(3) { transform: translate(175%, -50%); }
-.option:nth-child(4) { transform: translate(175%, 50%); }
-.option:nth-child(5) { transform: translate(50%, 175%); }
-.option:nth-child(6) { transform: translate(-50%, 175%); }
-.option:nth-child(7) { transform: translate(-175%, 50%); }
-.option:nth-child(8) { transform: translate(-175%, -50%); }
-/* Media query adjustments remain unchanged */
+.option:nth-child(1) { --angle: 0deg; }
+.option:nth-child(2) { --angle: 45deg; }
+.option:nth-child(3) { --angle: 90deg; }
+.option:nth-child(4) { --angle: 135deg; }
+.option:nth-child(5) { --angle: 180deg; }
+.option:nth-child(6) { --angle: 225deg; }
+.option:nth-child(7) { --angle: 270deg; }
+.option:nth-child(8) { --angle: 315deg; }
 
 
 @media (max-width: 600px) {
