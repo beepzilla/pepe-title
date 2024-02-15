@@ -81,6 +81,42 @@ h2 span.capital {
     font-size: 6vw;
 }
 
+.image {
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20vw; /* Adjust image size based on viewport width */
+    opacity: 0;
+    transition: opacity var(--duration) var(--easing), transform var(--duration) var(--easing);
+}
+
+.image.animate-in {
+    opacity: 1;
+    transform: translateX(-50%) translateY(-20px);
+}
+
+.button {
+    position: absolute;
+    top: 85%;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity var(--duration) var(--easing), transform var(--duration) var(--easing);
+    background-color: var(--text);
+    color: var(--bg);
+    border: none;
+    padding: 10px 20px;
+    font-family: 'Luckiest Guy', cursive;
+    font-size: 3vw;
+    cursor: pointer;
+}
+
+.button.animate-in {
+    opacity: 1;
+    transform: translateX(-50%) translateY(-20px);
+}
+
 @media (max-width: 600px) {
     h1 {
         font-size: 15vw; /* Increase font size for smaller screens */
@@ -106,5 +142,15 @@ h2 span.capital {
 
     h2 span.capital {
         font-size: 9vw;
+    }
+
+    .image {
+        top: 130%;
+        width: 40vw; /* Adjust image size for smaller screens */
+    }
+
+    .button {
+        top: 150%;
+        font-size: 5vw; /* Adjust button font size for smaller screens */
     }
 }
