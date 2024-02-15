@@ -146,8 +146,8 @@ h2 span.capital {
 
 .option {
     position: absolute;
-    width: 70px;
-    height: 70px;
+    width: 90px;
+    height: 90px;
     background-color: var(--text);
     border-radius: 50%;
     border: 5px solid black; /* Added black border */
@@ -221,8 +221,8 @@ h2 span.capital {
     }
 
     .option {
-        width: 60px;
-        height: 60px;
+        width: 90px;
+        height: 90px;
         font-size: 2vw;
     }
 }
